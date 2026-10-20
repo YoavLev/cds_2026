@@ -1,0 +1,302 @@
+---
+title: "Assignment 2"
+au
+output: html_document
+---
+
+```{r setup, message = FALSE, warning = FALSE}
+# Load packages
+library(tidyverse)
+library(dslabs)
+library(car)
+```
+
+# Part 1: Margarine Consumption and Divorce Rates in Maine
+
+## 1. Look at the data
+
+```{r}
+# Load the dataset
+data(divorce_margarine)
+divorce_margarine %>%
+  head()
+
+# Summary of each variable
+divorce_margarine %>%
+  summary()
+```
+
+## 2. Visualise the data
+
+```{r}
+# Scatterplot: margarine vs. divorce rate
+divorce_margarine %>%
+  ggplot(aes(x = margarine_consumption_per_capita, y = divorce_rate_maine)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(
+    title = "Margarine consumption and divorce rate",
+    x = "Margarine consumption per capita (lbs)",
+    y = "Divorce rate in Maine (per 1000)"
+  ) +
+  theme_minimal()
+```
+
+```{r}
+# Line plot: both variables over time
+divorce_margarine %>%
+  pivot_longer(
+    cols = c(divorce_rate_maine, margarine_consumption_per_capita),
+    names_to = "variable",
+    values_to = "value"
+  ) %>%
+  ggplot(aes(x = year, y = value, color = variable)) +
+  geom_line() +
+  geom_point() +
+  labs(
+    title = "Margarine consumption and divorce rate over time",
+    x = "Year",
+    y = "Value"
+  ) +
+  theme_minimal()
+```
+
+## 3. Check for normality
+
+We use the Shapiro-Wilk test. If p > .05, we assume the variable is normally distributed.
+
+```{r}
+# Histogram: divorce rate
+divorce_margarine %>%
+  ggplot(aes(x = divorce_rate_maine)) +
+  geom_histogram(bins = 5) +
+  labs(title = "Histogram of divorce rate") +
+  theme_minimal()
+
+# Histogram: margarine consumption
+divorce_margarine %>%
+  ggplot(aes(x = margarine_consumption_per_capita)) +
+  geom_histogram(bins = 5) +
+  labs(title = "Histogram of margarine consumption") +
+  theme_minimal()
+```
+
+```{r}
+# Q-Q plot: divorce rate
+divorce_margarine %>%
+  ggplot(aes(sample = divorce_rate_maine)) +
+  stat_qq() +
+  stat_qq_line() +
+  labs(title = "Q-Q plot of divorce rate") +
+  theme_minimal()
+
+# Q-Q plot: margarine consumption
+divorce_margarine %>%
+  ggplot(aes(sample = margarine_consumption_per_capita)) +
+  stat_qq() +
+  stat_qq_line() +
+  labs(title = "Q-Q plot of margarine consumption") +
+  theme_minimal()
+```
+
+```{r}
+# Shapiro-Wilk test: divorce rate
+divorce_margarine %>%
+  pull(divorce_rate_maine) %>%
+  shapiro.test()
+
+# margarine
+divorce_margarine %>%
+  pull(margarine_consumption_per_capita) %>%
+  shapiro.test()
+```
+
+Both Shapiro-Wilk tests are non-significant (divorce rate: W = 0.86, p = .079; margarine: W = 0.91, p = .250), so the data is normal. We therefore use Pearson's correlation test.
+
+## 4. Correlation test
+
+```{r}
+# Pearson's correlation test
+divorce_margarine %>%
+  cor.test(~ margarine_consumption_per_capita + divorce_rate_maine,
+           data = .,
+           method = "pearson")
+```
+
+## 5. Report
+
+A Pearson correlation showed a strong, positive, and significant relationship between margarine consumption per capita and the divorce rate in Maine, *r*(8) = .99, *p* < .001.
+
+## 6. Discussion
+
+The two variables trend almost perfectly together: in years when people in Maine ate more margarine, the divorce rate was also higher. However, this does **not** mean that margarine causes divorce (or that divorce makes people eat margarine).
+
+In practice, this means we should not tell couples to stop buying margarine to save their marriage. The example reminds us that correlation is not causation, that two things trending over time will often correlate, and that with only 10 data points a very strong correlation can easily appear by chance.
+
+# Part 2: Vocabulary, Education and Native-Born Status (GSS 1978)
+
+## 1. Prepare the data
+
+We keep only the year 1978 and remove rows with missing values in the three variables we use. This way all three models are fitted on exactly the same people, so they can be compared fairly.
+
+```{r}
+# Load the dataset
+data(GSSvocab)
+
+# Keep only 1978 and remove missing values
+vocab_1978 <- GSSvocab %>%
+  filter(year == 1978) %>%
+  drop_na(vocab, educ, nativeBorn)
+
+vocab_1978 %>%
+  head()
+
+# Summary of each variable
+vocab_1978 %>%
+  select(vocab, educ, nativeBorn) %>%
+  summary()
+
+# Number of people in each native-born group
+vocab_1978 %>%
+  count(nativeBorn)
+```
+
+## 2. Model 1: Vocabulary predicted by education
+
+### Visualise
+
+```{r}
+# Scatterplot: education vs. vocabulary
+vocab_1978 %>%
+  ggplot(aes(x = educ, y = vocab)) +
+  geom_jitter(alpha = 0.3) +
+  geom_smooth(method = "lm") +
+  labs(
+    title = "Education and vocabulary score (1978)",
+    x = "Education (years)",
+    y = "Vocabulary score (0-10)"
+  ) +
+  theme_minimal()
+```
+
+### Fit the model
+
+```{r}
+# Fit the regression model
+model1 <- lm(vocab ~ educ, data = vocab_1978)
+
+# Show the results
+summary(model1)
+```
+
+### Report
+
+A linear regression showed that education significantly predicted vocabulary score, *b* = 0.39, *SE* = 0.02, *p* < .001. The model explained 28.8% of the variance in vocabulary scores, *R*^2^ = .29, *p* < .001.
+
+### Interpretation
+
+For every extra year of education, people score on average about 0.4 points higher on the 10-point vocabulary test. Someone with 16 years of education is expected to score 1.6 points higher than someone with 12 years. Education explains a good part of the differences in vocabulary, but more than 70% of the variation is due to other things.
+
+## 3. Model 2: Vocabulary predicted by education and native-born status
+
+### Visualise
+
+```{r}
+# Scatterplot with a separate line for each native-born group
+vocab_1978 %>%
+  ggplot(aes(x = educ, y = vocab, color = nativeBorn)) +
+  geom_jitter(alpha = 0.3) +
+  geom_smooth(method = "lm") +
+  labs(
+    title = "Education, native-born status and vocabulary score (1978)",
+    x = "Education (years)",
+    y = "Vocabulary score (0-10)",
+    color = "Native-born"
+  ) +
+  theme_minimal()
+```
+
+```{r}
+# Boxplot: vocabulary by native-born status
+vocab_1978 %>%
+  ggplot(aes(x = nativeBorn, y = vocab)) +
+  geom_boxplot() +
+  labs(
+    title = "Vocabulary score by native-born status (1978)",
+    x = "Native-born",
+    y = "Vocabulary score (0-10)"
+  ) +
+  theme_minimal()
+```
+
+### Fit the model
+
+```{r}
+# Fit the regression model with two predictors
+model2 <- lm(vocab ~ educ + nativeBorn, data = vocab_1978)
+
+# Show the results
+summary(model2)
+```
+
+### Report
+
+A multiple linear regression showed that education, *b* = 0.39, *SE* = 0.02, *p* < .001, and being native-born, *b* = 0.65, *SE* = 0.21 *p* = .001, both significantly predictors of vocabulary score. The model explained 29.3% of the variance, *R*^2^ = .29, *p* < .001.
+
+### Interpretation
+
+The effect of education is the same as before: about 0.4 points for each extra year. On top of that, people born in the US score on average about 0.65 points higher than people born abroad with the same education. This makes sense, as the test is in English, which is often not the mother tongue of non-natives. However, adding native-born status only increases *R*^2^ from .288 to .293, so it adds small extra explanation. This is partly because only 89 of the 1483 people were not native-born.
+
+## 4. Model 3: Interaction between education and native-born status
+
+### Should we consider an interaction?
+
+An interaction would mean that the effect of education on vocabulary is different for native-born and foreign-born people. In the plot from Model 2, the two lines look almost parallel, which suggests there is no interaction. We still fit the model to test it formally.
+
+### Visualise
+
+The plot from Model 2 already shows a separate regression line for each group, which is exactly what the interaction model fits. If the lines had clearly different slopes, that would show an interaction.
+
+### Fit the model
+
+```{r}
+# Fit the regression model with an interaction
+model3 <- lm(vocab ~ educ * nativeBorn, data = vocab_1978)
+
+# Show the results
+summary(model3)
+```
+
+### Report
+
+A multiple linear regression with an interaction term showed that education significantly predicted vocabulary score, *b* = 0.42, *p* < .001. Native-born status, *b* = 0.96, *p* = .184, and the interaction between education and native-born status, *p* = .662, were not significant. The model explained 29.3% of the variance, *R*^2^ = .29, *p* < .001.
+
+### Interpretation
+
+The interaction is not significant, which means that each extra year of education increases vocabulary by about the same amount for native-born and foreign-born people. In practice, that means education "helps" the same for both groups. Native-born status also stops being significant in this model, but that is because the interaction term makes the model harder to estimate (the standard errors grows).
+
+## 5. Compare the models
+
+```{r}
+# Compare the three models with an F-test
+anova(model1, model2, model3)
+```
+
+```{r}
+# R-squared and adjusted R-squared for each model
+cat("R^2 for model 1 (educ):", round(summary(model1)$r.squared, 3), "\n")
+cat("R^2 for model 2 (educ + nativeBorn):", round(summary(model2)$r.squared, 3), "\n")
+cat("R^2 for model 3 (educ * nativeBorn):", round(summary(model3)$r.squared, 3), "\n")
+
+cat("Adjusted R^2 for model 1 (educ):", round(summary(model1)$adj.r.squared, 3), "\n")
+cat("Adjusted R^2 for model 2 (educ + nativeBorn):", round(summary(model2)$adj.r.squared, 3), "\n")
+cat("Adjusted R^2 for model 3 (educ * nativeBorn):", round(summary(model3)$adj.r.squared, 3), "\n")
+```
+
+Adding native-born status (Model 2) significantly improved the model compared to education alone, *F*(1, 1480) = 10.12, *p* = .001. Adding the interaction (Model 3) did not improve the model further, *F*(1, 1479) = 0.19, *p* = .662.
+
+## 6. Discussion
+
+**Model 2 performs best.** It has the highest adjusted *R*^2^ (.292), both of its predictors are significant, and it is significantly better than Model 1. Model 3 has the same *R*^2^ as Model 2, but its extra interaction term is not significant and it makes the other coefficients harder to interpret, so it adds complexity without explaining more variance.
+
+In real-world terms, Model 2 is easy to explain: each extra year of school is linked to about 0.4 more correct words, and people born in the US score about 0.65 points higher than foreign-born people with the same amount of schooling. Still, the improvement over Model 1 is very small (*R*^2^ goes from .288 to .293), so for most practical purposes education alone tells most of the story. It is also important to mention that this does not mean a causal connection: we cannot conclude that education *causes* a better vocabulary, since people who already have a large vocabulary may also be more likely to stay in school longer.
