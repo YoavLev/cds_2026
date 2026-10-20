@@ -1,7 +1,9 @@
 ---
 title: "Assignment 2"
-au
-output: html_document
+author: "Domink Firisz, Yoav Levy"
+output:
+  word_document: default
+  pdf_document: default
 ---
 
 ```{r setup, message = FALSE, warning = FALSE}
@@ -13,7 +15,7 @@ library(car)
 
 # Part 1: Margarine Consumption and Divorce Rates in Maine
 
-## 1. Look at the data
+## 1. Look at the data (Yoav)
 
 ```{r}
 # Load the dataset
@@ -26,7 +28,7 @@ divorce_margarine %>%
   summary()
 ```
 
-## 2. Visualise the data
+## 2. Visualise the data (Dominik)
 
 ```{r}
 # Scatterplot: margarine vs. divorce rate
@@ -61,7 +63,7 @@ divorce_margarine %>%
   theme_minimal()
 ```
 
-## 3. Check for normality
+## 3. Check for normality (Yoav)
 
 We use the Shapiro-Wilk test. If p > .05, we assume the variable is normally distributed.
 
@@ -113,7 +115,7 @@ divorce_margarine %>%
 
 Both Shapiro-Wilk tests are non-significant (divorce rate: W = 0.86, p = .079; margarine: W = 0.91, p = .250), so the data is normal. We therefore use Pearson's correlation test.
 
-## 4. Correlation test
+## 4. Correlation test (Dominik)
 
 ```{r}
 # Pearson's correlation test
@@ -123,11 +125,11 @@ divorce_margarine %>%
            method = "pearson")
 ```
 
-## 5. Report
+## 5. Report (Yoav)
 
 A Pearson correlation showed a strong, positive, and significant relationship between margarine consumption per capita and the divorce rate in Maine, *r*(8) = .99, *p* < .001.
 
-## 6. Discussion
+## 6. Discussion (Dominik)
 
 The two variables trend almost perfectly together: in years when people in Maine ate more margarine, the divorce rate was also higher. However, this does **not** mean that margarine causes divorce (or that divorce makes people eat margarine).
 
@@ -135,7 +137,7 @@ In practice, this means we should not tell couples to stop buying margarine to s
 
 # Part 2: Vocabulary, Education and Native-Born Status (GSS 1978)
 
-## 1. Prepare the data
+## 1. Prepare the data (Dominik)
 
 We keep only the year 1978 and remove rows with missing values in the three variables we use. This way all three models are fitted on exactly the same people, so they can be compared fairly.
 
@@ -161,7 +163,7 @@ vocab_1978 %>%
   count(nativeBorn)
 ```
 
-## 2. Model 1: Vocabulary predicted by education
+## 2. Model 1: Vocabulary predicted by education (Yoav)
 
 ### Visualise
 
@@ -197,7 +199,7 @@ A linear regression showed that education significantly predicted vocabulary sco
 
 For every extra year of education, people score on average about 0.4 points higher on the 10-point vocabulary test. Someone with 16 years of education is expected to score 1.6 points higher than someone with 12 years. Education explains a good part of the differences in vocabulary, but more than 70% of the variation is due to other things.
 
-## 3. Model 2: Vocabulary predicted by education and native-born status
+## 3. Model 2: Vocabulary predicted by education and native-born status (Dominik)
 
 ### Visualise
 
@@ -247,7 +249,7 @@ A multiple linear regression showed that education, *b* = 0.39, *SE* = 0.02, *p*
 
 The effect of education is the same as before: about 0.4 points for each extra year. On top of that, people born in the US score on average about 0.65 points higher than people born abroad with the same education. This makes sense, as the test is in English, which is often not the mother tongue of non-natives. However, adding native-born status only increases *R*^2^ from .288 to .293, so it adds small extra explanation. This is partly because only 89 of the 1483 people were not native-born.
 
-## 4. Model 3: Interaction between education and native-born status
+## 4. Model 3: Interaction between education and native-born status (Yoav)
 
 ### Should we consider an interaction?
 
@@ -275,7 +277,7 @@ A multiple linear regression with an interaction term showed that education sign
 
 The interaction is not significant, which means that each extra year of education increases vocabulary by about the same amount for native-born and foreign-born people. In practice, that means education "helps" the same for both groups. Native-born status also stops being significant in this model, but that is because the interaction term makes the model harder to estimate (the standard errors grows).
 
-## 5. Compare the models
+## 5. Compare the models (Dominik)
 
 ```{r}
 # Compare the three models with an F-test
@@ -295,7 +297,7 @@ cat("Adjusted R^2 for model 3 (educ * nativeBorn):", round(summary(model3)$adj.r
 
 Adding native-born status (Model 2) significantly improved the model compared to education alone, *F*(1, 1480) = 10.12, *p* = .001. Adding the interaction (Model 3) did not improve the model further, *F*(1, 1479) = 0.19, *p* = .662.
 
-## 6. Discussion
+## 6. Discussion (Yoav)
 
 **Model 2 performs best.** It has the highest adjusted *R*^2^ (.292), both of its predictors are significant, and it is significantly better than Model 1. Model 3 has the same *R*^2^ as Model 2, but its extra interaction term is not significant and it makes the other coefficients harder to interpret, so it adds complexity without explaining more variance.
 
