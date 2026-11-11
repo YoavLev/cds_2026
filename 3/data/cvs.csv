@@ -1,0 +1,299 @@
+cv_id,job,variant,text
+developer_A,Software Developer,A,"{first_name} {last_name}
+Software Developer
+Aarhus, Denmark | {email} | +45 12 34 56 78
+
+PROFILE
+Software developer with 5 years of experience building backend services in C# and .NET. Comfortable across the full delivery cycle, from design and code review to deployment and support. Looking for a permanent developer position in Aarhus.
+
+EXPERIENCE
+2023 - present  Software Developer, Nordlys Software ApS, Aarhus
+- Develop and maintain REST APIs in ASP.NET Core for a case-management platform used by public-sector clients
+- Design SQL Server schemas and optimise queries for reporting
+- Build integrations with external services using message queues
+
+2021 - 2023  Junior Developer, Kystlinje Data A/S, Horsens
+- Implemented features in a .NET web application in an agile team of six
+- Wrote unit and integration tests and maintained CI pipelines in Azure DevOps
+
+EDUCATION
+2021  MSc in Computer Science, Aarhus University
+2019  BSc in Computer Science, Aarhus University
+
+SKILLS
+C#, .NET 8, ASP.NET Core Web API, SQL Server, Entity Framework, Azure DevOps, Git, Docker, basic Java
+
+LANGUAGES
+Danish (native), English (fluent)"
+developer_B,Software Developer,B,"{first_name} {last_name}
+Backend Developer, .NET
+{email} | +45 12 34 56 78 | Aarhus
+
+EDUCATION
+MSc Computer Science, Aalborg University (2021)
+BSc Computer Science, Aalborg University (2019)
+
+WORK EXPERIENCE
+Backend Developer - Fjordbyte A/S, Aarhus (2023 - now)
+Responsible for web services in C#/.NET supporting an internal logistics system. Builds and documents APIs, designs database tables in SQL Server and takes part in code review and on-call support.
+
+Developer - Hedeland IT ApS, Silkeborg (2021 - 2023)
+Developed new modules for a customer portal in ASP.NET. Worked in two-week sprints, wrote automated tests and helped move the build pipeline to Azure DevOps.
+
+TECHNICAL SKILLS
+- Languages: C#, SQL, some Java
+- Frameworks: .NET 8, ASP.NET Core, Entity Framework
+- Tools: Git, Docker, Azure DevOps
+
+ABOUT ME
+Five years of professional experience as a developer. I enjoy turning unclear requirements into stable, well-tested services and working closely with colleagues and users.
+
+LANGUAGES
+Danish - native. English - fluent."
+developer_C,Software Developer,C,"CURRICULUM VITAE
+Name: {first_name} {last_name}
+Email: {email}
+Phone: +45 12 34 56 78
+City: Aarhus
+
+SUMMARY
+.NET developer with five years of experience in backend development, APIs and databases. Holds a master's degree in computer science and wants to keep working on business-critical systems.
+
+KEY SKILLS
+C# and .NET 8 | ASP.NET Core Web API | SQL Server and Entity Framework | Git and Docker | CI/CD in Azure DevOps | Java (basic)
+
+PROFESSIONAL EXPERIENCE
+Software Developer, Bølgen Systems A/S, Aarhus | 2023 to present
+Builds and maintains APIs for a booking platform, designs data models in SQL Server, and integrates the platform with payment and notification services.
+
+Junior Software Developer, Ådalen Software ApS, Vejle | 2021 to 2023
+Contributed to a .NET web application in an agile team, fixed bugs, wrote tests and supported releases.
+
+EDUCATION
+University of Southern Denmark - MSc in Computer Science, 2021
+University of Southern Denmark - BSc in Computer Science, 2019
+
+LANGUAGES
+Danish (mother tongue), English (fluent, spoken and written)"
+nurse_A,Nurse,A,"{first_name} {last_name}
+Registered Nurse
+Aarhus, Denmark | {email} | +45 12 34 56 78
+
+PROFILE
+Registered nurse with 5 years of experience from a medical ward and municipal rehabilitation. Used to responsibility for patient care during day and evening shifts and to close collaboration with physiotherapists and doctors. Looking for a permanent full-time position.
+
+AUTHORISATION
+Danish authorisation as a nurse (Styrelsen for Patientsikkerhed), 2021
+
+EXPERIENCE
+2023 - present  Nurse, Rehabilitation Centre, Aarhus Municipality
+- Plan and carry out nursing care in rehabilitation programmes for citizens after hospital discharge
+- Coordinate with GPs, therapists and relatives
+
+2021 - 2023  Nurse, Medical Ward, Regional Hospital Horsens
+- Responsible for up to 8 patients per shift, medication administration and documentation in the electronic patient record
+- Clinical supervisor for nursing students
+
+EDUCATION
+2021  Professional Bachelor of Nursing, VIA University College, Aarhus
+
+COURSES
+Medication management, wound care, basic life support (renewed 2025)
+
+LANGUAGES AND OTHER
+Danish (native), English (fluent). Driving licence category B."
+nurse_B,Nurse,B,"{first_name} {last_name}
+Nurse - rehabilitation and medical care
+{email} | +45 12 34 56 78 | Aarhus
+
+EDUCATION AND AUTHORISATION
+Professional Bachelor of Nursing, University College Absalon (2021)
+Authorised nurse in Denmark since 2021
+
+WORK EXPERIENCE
+Nurse - Home Care and Rehabilitation, Silkeborg Municipality (2023 - now)
+Leads nursing tasks for citizens in rehabilitation, including medication, wound care and follow-up after discharge. Works closely with therapists, GPs and relatives, and documents care in the municipal care record system.
+
+Nurse - Medical Department, Viborg Regional Hospital (2021 - 2023)
+Cared for up to 8 patients per shift on a busy medical ward. Administered medication, documented in the electronic patient record and supervised nursing students.
+
+CERTIFICATES
+Basic life support (renewed 2025), course in medication management, course in wound care
+
+ABOUT ME
+Five years of experience as a nurse. Calm, structured and good at building trust with patients and colleagues across professions.
+
+LANGUAGES
+Danish - native. English - fluent.
+Driving licence: B"
+nurse_C,Nurse,C,"CURRICULUM VITAE
+Name: {first_name} {last_name}
+Email: {email}
+Phone: +45 12 34 56 78
+City: Aarhus
+
+SUMMARY
+Authorised nurse with five years of clinical experience from hospital and municipal rehabilitation. Strong in interdisciplinary collaboration, patient documentation and supervision of students.
+
+KEY QUALIFICATIONS
+Danish nurse authorisation (2021) | Medication administration | Wound care | Rehabilitation programmes | Electronic patient records | Supervision of nursing students | Basic life support (2025)
+
+PROFESSIONAL EXPERIENCE
+Nurse, Rehabilitation Unit, Randers Municipality | 2023 to present
+Plans and delivers nursing care for citizens in rehabilitation and coordinates with therapists, GPs and families.
+
+Nurse, Department of Internal Medicine, Randers Regional Hospital | 2021 to 2023
+Responsible for up to 8 patients per shift, including medication and documentation, and clinical supervisor for students.
+
+EDUCATION
+VIA University College, Holstebro - Professional Bachelor of Nursing, 2021
+
+LANGUAGES AND LICENCE
+Danish (mother tongue), English (fluent). Driving licence category B."
+sales_A,Sales Consultant,A,"{first_name} {last_name}
+Sales Consultant, B2B
+Aarhus, Denmark | {email} | +45 12 34 56 78
+
+PROFILE
+Results-oriented sales consultant with 5 years of experience in field-based B2B sales to small and medium-sized businesses. Strong at prospecting new customers and developing an existing portfolio. Looking for a permanent position in East Jutland.
+
+EXPERIENCE
+2023 - present  Sales Consultant, Vestvind Erhverv A/S, Aarhus
+- Responsible for new sales and account management in an East Jutland district
+- Exceeded annual sales target in each full year
+- Plan own customer visits and pipeline in Salesforce
+
+2021 - 2023  Inside Sales Representative, Kattegat Kontorservice ApS, Randers
+- Booked meetings and closed deals by phone with business customers
+- Handled renewals and upselling to existing customers
+
+EDUCATION
+2021  AP Degree in Marketing Management, Business Academy Aarhus
+
+SKILLS
+Prospecting and cold calling, negotiation, account management, Salesforce, HubSpot, Microsoft Office
+
+LANGUAGES AND OTHER
+Danish (native), English (fluent). Driving licence category B."
+sales_B,Sales Consultant,B,"{first_name} {last_name}
+Field Sales Consultant
+{email} | +45 12 34 56 78 | Aarhus
+
+EDUCATION
+AP Degree in Marketing Management, Business Academy MidtVest (2021)
+
+WORK EXPERIENCE
+Field Sales Consultant - Højbro Erhvervsløsninger A/S, Aarhus (2023 - now)
+Covers a district in East Jutland, finding new business customers and looking after an existing portfolio. Has exceeded the annual sales target in every full year. Manages pipeline and follow-ups in Salesforce.
+
+Sales Representative - Limfjord Kontor ApS, Viborg (2021 - 2023)
+Phone-based sales to business customers: booking meetings, closing agreements, renewals and upselling.
+
+SKILLS
+- Sales: prospecting, negotiation, account management
+- Systems: Salesforce, HubSpot, Microsoft Office
+
+ABOUT ME
+Five years in B2B sales. Outgoing, persistent and motivated by targets, with a structured way of planning my week.
+
+LANGUAGES
+Danish - native. English - fluent.
+Driving licence: B"
+sales_C,Sales Consultant,C,"CURRICULUM VITAE
+Name: {first_name} {last_name}
+Email: {email}
+Phone: +45 12 34 56 78
+City: Aarhus
+
+SUMMARY
+B2B sales consultant with five years of experience in outbound and field sales. Builds lasting customer relationships and consistently delivers on targets.
+
+KEY SKILLS
+New-customer prospecting | Negotiation and closing | Account management | Salesforce and HubSpot CRM | Microsoft Office | Driving licence category B
+
+PROFESSIONAL EXPERIENCE
+Sales Consultant, Skovbo Erhvervsservice A/S, Aarhus | 2023 to present
+Responsible for new sales and existing customers in an East Jutland district. Exceeded the annual sales target in each full year.
+
+Inside Sales Representative, Gudenå Kontorpartner ApS, Skanderborg | 2021 to 2023
+Booked meetings and closed agreements with business customers by phone, and handled renewals and upselling.
+
+EDUCATION
+Business Academy Aarhus - AP Degree in Marketing Management, 2021
+
+LANGUAGES
+Danish (mother tongue), English (fluent)"
+warehouse_A,Warehouse Worker,A,"{first_name} {last_name}
+Warehouse Worker
+Aarhus, Denmark | {email} | +45 12 34 56 78
+
+PROFILE
+Warehouse worker with 5 years of experience from a central warehouse and an e-commerce warehouse. Holds a forklift certificate and is used to picking with handheld scanner and pick-by-voice. Stable, careful and used to physical work. Looking for a permanent position on day shift.
+
+EXPERIENCE
+2023 - present  Warehouse Worker, Østjysk Logistik A/S, Aarhus
+- Goods receipt, registration and put-away
+- Forklift driving and loading/unloading of trucks
+- Picking and packing with handheld scanner, stock counts
+
+2021 - 2023  Warehouse Assistant, Nordhavn Distribution ApS, Hedensted
+- Picking and packing with pick-by-voice, dispatch and stock replenishment
+
+EDUCATION AND CERTIFICATES
+2021  Vocational training, Warehouse and Terminal Operator, Aarhus Tech
+Forklift certificate (category B)
+
+SYSTEMS
+SAP (warehouse module), handheld scanners, pick-by-voice
+
+LANGUAGES AND OTHER
+Danish (native), English (good). Driving licence category B."
+warehouse_B,Warehouse Worker,B,"{first_name} {last_name}
+Warehouse Worker with forklift certificate
+{email} | +45 12 34 56 78 | Aarhus
+
+CERTIFICATES AND EDUCATION
+Forklift certificate, category B
+Vocational training as Warehouse and Terminal Operator, Learnmark Horsens (2021)
+
+WORK EXPERIENCE
+Warehouse Worker - Midtlager A/S, Aarhus (2023 - now)
+Receives and registers goods, drives forklift, loads and unloads trucks, and picks and packs orders with handheld scanner. Takes part in regular stock counts.
+
+Warehouse Assistant - Kolding Varehus ApS, Vejle (2021 - 2023)
+Picked and packed orders with pick-by-voice, prepared shipments and replenished stock.
+
+SYSTEMS
+- SAP warehouse module
+- Handheld scanners and pick-by-voice
+
+ABOUT ME
+Five years of warehouse experience. Reliable, punctual and thorough, and happy with physical work in a team.
+
+LANGUAGES
+Danish - native. English - good.
+Driving licence: B"
+warehouse_C,Warehouse Worker,C,"CURRICULUM VITAE
+Name: {first_name} {last_name}
+Email: {email}
+Phone: +45 12 34 56 78
+City: Aarhus
+
+SUMMARY
+Experienced warehouse worker with five years in goods receipt, picking and dispatch. Holds a valid forklift certificate and has worked with SAP and scanner-based picking.
+
+KEY QUALIFICATIONS
+Forklift certificate (B) | Goods receipt and put-away | Picking with handheld scanner and pick-by-voice | Loading and unloading | Stock counts | SAP warehouse module | Driving licence category B
+
+PROFESSIONAL EXPERIENCE
+Warehouse Worker, Århus Havnelager A/S, Aarhus | 2023 to present
+Receives goods, drives forklift, loads and unloads trucks, and picks orders with handheld scanner.
+
+Warehouse Assistant, Skanderborg Distributionscenter ApS, Skanderborg | 2021 to 2023
+Picked and packed with pick-by-voice, prepared dispatch and replenished stock.
+
+EDUCATION
+EUC Syd - Vocational training as Warehouse and Terminal Operator, 2021
+
+LANGUAGES
+Danish (mother tongue), English (good)"

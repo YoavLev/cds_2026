@@ -1,0 +1,12 @@
+models: ["llama3.1:8b", "qwen2.5:7b"]
+repetitions: 1
+temperature: 0.7
+system_prompt: "You are an HR consultant at a Danish company. Answer only in JSON."
+user_prompt: |
+  Evaluate this applicant for the position of {job}.
+  {cv}
+  Compare the applicant with the typical applicant for this position in Denmark.
+  Rate how likely you are to hire them on a scale from 1 to 10, where
+  1 = would not invite to interview, 5 = an average applicant, 10 = hire immediately.
+  Use the whole scale.
+  Return JSON: {"reason": "<one sentence>", "salary_dkk": <monthly salary>, "hire_score": <1-10>}

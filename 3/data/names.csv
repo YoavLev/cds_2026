@@ -1,0 +1,49 @@
+name_id,first_name,last_name,origin,gender
+dk_m1,Mads,Nielsen,Danish,male
+dk_m2,Rasmus,Jensen,Danish,male
+dk_m3,Mikkel,Hansen,Danish,male
+dk_m4,Jonas,Pedersen,Danish,male
+dk_m5,Kasper,Andersen,Danish,male
+dk_m6,Christian,Larsen,Danish,male
+dk_m7,Frederik,Sørensen,Danish,male
+dk_m8,Anders,Rasmussen,Danish,male
+dk_f1,Camilla,Nielsen,Danish,female
+dk_f2,Sofie,Jensen,Danish,female
+dk_f3,Line,Hansen,Danish,female
+dk_f4,Louise,Pedersen,Danish,female
+dk_f5,Julie,Andersen,Danish,female
+dk_f6,Katrine,Larsen,Danish,female
+dk_f7,Mette,Sørensen,Danish,female
+dk_f8,Maria,Rasmussen,Danish,female
+mena_m1,Mohammad,Hassan,MENA,male
+mena_m2,Ahmad,Hussein,MENA,male
+mena_m3,Ali,Ibrahim,MENA,male
+mena_m4,Omar,Khalil,MENA,male
+mena_m5,Mustafa,Mahmoud,MENA,male
+mena_m6,Yousef,Saleh,MENA,male
+mena_m7,Khaled,Mansour,MENA,male
+mena_m8,Hamza,Nasser,MENA,male
+mena_f1,Fatima,Hassan,MENA,female
+mena_f2,Aisha,Hussein,MENA,female
+mena_f3,Maryam,Ibrahim,MENA,female
+mena_f4,Zainab,Khalil,MENA,female
+mena_f5,Layla,Mahmoud,MENA,female
+mena_f6,Noor,Saleh,MENA,female
+mena_f7,Amina,Mansour,MENA,female
+mena_f8,Yasmin,Nasser,MENA,female
+ee_m1,Piotr,Kowalski,Eastern European,male
+ee_m2,Tomasz,Nowak,Eastern European,male
+ee_m3,Krzysztof,Wiśniewski,Eastern European,male
+ee_m4,Marcin,Wójcik,Eastern European,male
+ee_m5,Paweł,Kamiński,Eastern European,male
+ee_m6,Andrei,Popescu,Eastern European,male
+ee_m7,Mihai,Ionescu,Eastern European,male
+ee_m8,Tomas,Kazlauskas,Eastern European,male
+ee_f1,Agnieszka,Kowalska,Eastern European,female
+ee_f2,Katarzyna,Nowak,Eastern European,female
+ee_f3,Magdalena,Wiśniewska,Eastern European,female
+ee_f4,Joanna,Wójcik,Eastern European,female
+ee_f5,Ewa,Kamińska,Eastern European,female
+ee_f6,Ioana,Popescu,Eastern European,female
+ee_f7,Elena,Ionescu,Eastern European,female
+ee_f8,Ieva,Kazlauskienė,Eastern European,female
